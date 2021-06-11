@@ -5,7 +5,7 @@ import java.util.Objects;
 public class ColoredPoint {
 
     final private Color color;
-    private Point point;
+    Point point;
 
     public ColoredPoint(Color color, Point point) {
         this.color = color;
@@ -25,8 +25,8 @@ public class ColoredPoint {
         return Objects.hash(color, point);
     }
 
-    public ColoredPoint offsetXY(){
-        return new ColoredPoint(getColor(), point.offsetXY(getX(), getY()));
+    public ColoredPoint offsetXY(Color color, Point point){
+        return new ColoredPoint(getColor(), this.point.offsetXY(getX(), getY()));
     }
 
     public Color getColor() {
